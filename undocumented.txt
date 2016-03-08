@@ -1,5 +1,5 @@
-DismissButton.swift
-	public struct DismissButton
+DismissButtonConfig.swift
+	public struct DismissButtonConfig
 	public enum Location
 	case Left
 	case Right
@@ -14,7 +14,6 @@ DismissButton.swift
 	case Custom(String)
 	public var systemItem: UIBarButtonSystemItem?
 	public var title: String?
-	public struct DismissButtonConfig
 ViewControllerExtensions.swift
 	public func withNavigation() -> UINavigationController
 	public func withPresentation(presentation: UIModalPresentationStyle) -> Self
