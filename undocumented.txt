@@ -1,5 +1,9 @@
 DismissButtonConfig.swift
-	public struct DismissButtonConfig
+	public let location: Location
+	public let style: Style
+	public let text: Text
+	public init(location: Location = .Left, style: Style = .Plain, text: Text = .Cancel)
+	public func barButtonItem(target: AnyObject, selector: Selector) -> UIBarButtonItem
 	public enum Location
 	case Left
 	case Right
