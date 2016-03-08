@@ -1,0 +1,45 @@
+DismissButton.swift
+	public struct DismissButton
+	public enum Location
+	case Left
+	case Right
+	public enum Style
+	case Bold
+	case Plain
+	public var itemStyle: UIBarButtonItemStyle
+	public enum Text
+	case Cancel
+	case Done
+	case Save
+	case Custom(String)
+	public var systemItem: UIBarButtonSystemItem?
+	public var title: String?
+	public struct DismissButtonConfig
+ViewControllerExtensions.swift
+	public func withNavigation() -> UINavigationController
+	public func withPresentation(presentation: UIModalPresentationStyle) -> Self
+	public func withTransition(transition: UIModalTransitionStyle) -> Self
+	public func withNavigationStyle(navigationStyle: NavigationStyle) -> UIViewController
+	public func withStyles(
+        navigation navigation: NavigationStyle,
+        presentation: UIModalPresentationStyle,
+        transition: UIModalTransitionStyle) -> UIViewController
+	public func presentViewController(viewController: UIViewController, type: PresentationType, animated: Bool = true)
+	public func addDismissButtonIfNeeded(config config: DismissButtonConfig = DismissButtonConfig())
+	public func addDismissButton(config config: DismissButtonConfig = DismissButtonConfig())
+PresentationType.swift
+	public enum NavigationStyle
+	case None
+	case WithNavigation
+	public struct PopoverConfig
+	public enum Source
+	case BarButtonItem(UIBarButtonItem)
+	case View(UIView)
+	public init(source: Source, arrowDirection: UIPopoverArrowDirection = .Any, delegate: UIPopoverPresentationControllerDelegate? = nil)
+	public enum PresentationType
+	case Modal(NavigationStyle, UIModalPresentationStyle, UIModalTransitionStyle)
+	case Popover(PopoverConfig)
+	case Push
+	case Show
+	case ShowDetail(NavigationStyle)
+	case Custom(UIViewControllerTransitioningDelegate)
