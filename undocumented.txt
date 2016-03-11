@@ -8,6 +8,7 @@ ViewControllerExtensions.swift
         presentation: UIModalPresentationStyle,
         transition: UIModalTransitionStyle) -> UIViewController
 	public func presentViewController(viewController: UIViewController, type: PresentationType, animated: Bool = true)
+	public func dismiss()
 	public func addDismissButtonIfNeeded(config config: DismissButtonConfig = DismissButtonConfig())
 	public func addDismissButton(config config: DismissButtonConfig = DismissButtonConfig())
 PresentationType.swift
