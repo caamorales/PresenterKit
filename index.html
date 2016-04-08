@@ -66,8 +66,7 @@
         <section>
           <section class="section">
             
-            <a href='#warning_this_is_still_a_work_in_progress_warning' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='warning_this_is_still_a_work_in_progress_warning'>:warning: This is still a work in-progress :warning:</h3>
-<a href='#presenterkit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='presenterkit'>PresenterKit</h1>
+            <a href='#presenterkit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='presenterkit'>PresenterKit</h1>
 
 <p><a href="https://travis-ci.org/jessesquires/PresenterKit"><img src="https://travis-ci.org/jessesquires/PresenterKit.svg" alt="Build Status"></a> <a href="https://cocoapods.org/pods/PresenterKit"><img src="https://img.shields.io/cocoapods/v/PresenterKit.svg" alt="Version Status"></a> <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/cocoapods/l/PresenterKit.svg" alt="license MIT"></a> <a href="http://codecov.io/github/jessesquires/PresenterKit"><img src="https://img.shields.io/codecov/c/github/jessesquires/PresenterKit.svg" alt="codecov.io"></a> <a href="http://www.jessesquires.com/PresenterKit"><img src="https://img.shields.io/cocoapods/p/PresenterKit.svg" alt="Platform"></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
 
@@ -102,9 +101,24 @@
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PresenterKit</span>
 </code></pre>
 
-<blockquote>
-<p>Checkout the included <a href="https://github.com/jessesquires/PresenterKit/tree/develop/Example">example project</a>.</p>
-</blockquote>
+<ul>
+<li>Watch <a href="https://realm.io/news/slug-jesse-squires-swifty-view-controller-presenters/">the talk</a></li>
+<li>Read the <a href="http://www.jessesquires.com/swifty-presenters/">blog post</a></li>
+<li>Run the <a href="https://github.com/jessesquires/PresenterKit/tree/develop/Example">example project</a></li>
+</ul>
+<a href='#presenting_a_view_controller_modally' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='presenting_a_view_controller_modally'>Presenting a view controller modally</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">MyViewController</span><span class="p">()</span>
+<span class="nf">presentViewController</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">Modal</span><span class="p">(</span><span class="o">.</span><span class="kt">WithNavigation</span><span class="p">,</span> <span class="o">.</span><span class="kt">FormSheet</span><span class="p">,</span> <span class="o">.</span><span class="kt">CoverVertical</span><span class="p">))</span>
+</code></pre>
+<a href='#pushing_a_view_controller' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='pushing_a_view_controller'>Pushing a view controller</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">MyViewController</span><span class="p">()</span>
+<span class="nf">presentViewController</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">Push</span><span class="p">)</span>
+</code></pre>
+<a href='#presenting_as_a_popover' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='presenting_as_a_popover'>Presenting as a popover</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">MyViewController</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">PopoverConfig</span><span class="p">(</span><span class="nv">source</span><span class="p">:</span> <span class="o">.</span><span class="kt">BarButtonItem</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+<span class="nf">presentViewController</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">Popover</span><span class="p">(</span><span class="n">config</span><span class="p">))</span>
+</code></pre>
 <a href='#unit_tests' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='unit_tests'>Unit tests</h2>
 
 <p>There&rsquo;s a suite of unit tests for <code>PresenterKit</code>. To run them, open <code>PresenterKit.xcodeproj</code>, select the <code>PresenterKit</code> scheme, then &#x2318;-u.</p>
